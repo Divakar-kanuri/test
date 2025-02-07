@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Knowledge</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <nav>
+    <div class="nav">
+      <div class="v">
+        <img src="p9.png" class="pa">
+        <p style="margin-top:50px;font-size: 30px;">Moving Knowledge</p>
+      </div>
+      <div class="b">
+        <button class="lb">Login</button>
+        <button class="sb">Sign Up</button>
+      </div>
+    </div>
+    <div class="nav1">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#">Uses</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="hamburger" onclick="toggleMobileNav()">☰</div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#">Uses</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="mar">
+    <div class="marquee-content">
+      <p>We are coming to Bimavaram in a few days</p>
+      <img src="p10.jpg" style="width: 100px; height: 100%;">
+    </div>
+  </div>
+
+  <div class="hero">
+    <img class="mySlides" src="p1.jpg" style="width:100%">
+    <img class="mySlides" src="p2.jpg" style="width:100%">
+    <img class="mySlides" src="p3.png" style="width:100%">
+    <img class="mySlides" src="p4.jpg" style="width:100%">
+    <button class="b-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="b-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+
+  <div id="about">
+    <h2>About</h2>
+    <p>Learn about the purpose of our platform.</p>
+  </div>
+
+  <div class="services">
+    <div class="service-card">
+      <img src="p4.jpg" alt="Service 1">
+      <h3>Service 1</h3>
+      <p>Explanation about Service 1</p>
+    </div>
+    <div class="service-card">
+      <img src="p5.jpg" alt="Service 2">
+      <h3>Service 2</h3>
+      <p>Explanation about Service 2</p>
+    </div>
+    <div class="service-card">
+      <img src="p6.jpg" alt="Service 3">
+      <h3>Service 3</h3>
+      <p>Explanation about Service 3</p>
+    </div>
+  </div>
+  <form id="contact-form">
+    <h2>Contact Us</h2>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  <footer>
+    <p>&copy; 2025 Moving Knowledge</p>
+  </footer>
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex-1].style.display = "block";
+    }
+    function toggleMobileNav() {
+      var nav = document.getElementById('mobile-nav');
+      nav.classList.toggle('open');
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      if (name === '' || email === '' || message === '') {
+        alert('All fields are required!');
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
