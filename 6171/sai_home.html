@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRDO Mock Website</title>
+    <link rel="stylesheet" href="sh.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-container" id="logo-container">
+                <img src="sih.jpg" alt="Four Lions Symbol" class="logo">
+            </div>
+            <div class="buttons">
+        <button class="btn"><a href="ad_log.html" style="color:white; text-decoration: none;">Admin</a></button>
+                <button class="btn"><a href="stu_log.html" style="color:white; text-decoration: none;">Student/Parents</a></button>
+                <button class="btn"><a href="fac_log.html" style="color:white; text-decoration: none;">Factuly</a></button>
+            </div>
+        </div>
+        <nav class="navbar">
+            <a href="sai_home.html">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">Research</a>
+            <a href="#contect">Contact</a>
+        </nav>
+
+        <div class="marquee">
+            <marquee class="blink">Latest News:47th Annivasary of SRKR celebrating on 17 march 2025.</marquee>
+        </div>
+    </header>
+
+    <section class="slider-section">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="s1.jpg" style="width:100%; height:400px;" class="overlay-image">
+                <div class="text">Caption One</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="s2.jpg" style="width:100%; height:400px;" class="overlay-image">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="s3.jpg" style="width:100%; height:400px;" class="overlay-image">
+                <div class="text">Caption Three</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 3</div>
+                <img src="s4.webp" style="width:100%; height:400px;" class="overlay-image">
+                <div class="text">Caption Three</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 3</div>
+                <img src="s7.webp" style="width:100%; height:400px;" class="overlay-image">
+                <div class="text">Caption Three</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 3</div>
+                <img src="s6.jpg" style="width:100%; height:400px;" class="overlay-image">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br>
+
+        <div style="text-align:center"class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </section>
+    <main class="main-content">
+        <section class="left-section">
+            <h2 style=" border-bottom: 2px solid #086bd6;  display: inline-block">Important Updates</h2>
+            <div class="scroll-container">
+                <div class="scroll-text">
+                    <p>This is the text that scrolls up continuously.</p><br>
+                    <p>You can add more lines of text here.</p><br>
+                    <p>It will scroll up in an infinite loop.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="right-section">
+            <h1 style=" border-bottom: 2px solid #086bd6;  display: inline-block">Welcome to DRDO</h1>
+            <div class="scroll-container">
+                <div class="scroll-text">
+                    <p>This is line 1 - <span class="applied-text"><a href="ksh1.html">Applied</a></span></p><br>
+                    <p>This is line 2 - <span class="applied-text"><a href="ksh1.html">Applied</a></span></p><br>
+                    <p>This is line 3 - <span class="applied-text"><a href="ksh1.html">Applied</a></span></p><br>
+                    <p>This is line 4 - <span class="applied-text"><a href="ksh1.html">Applied</a></span></p><br>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contect">
+        <p>&copy; 2024 DRDO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const logoContainer = document.getElementById('logo-container');
+            setTimeout(() => {
+                logoContainer.style.left = '50%'; 
+                logoContainer.style.transform = 'translate(-50%, -50%)';
+                logoContainer.style.opacity = '1';
+            }, 100); 
+        };
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+    setInterval(function() {
+        plusSlides(1);
+    }, 5000);
+    </script>
+
+</body>
+</html>
